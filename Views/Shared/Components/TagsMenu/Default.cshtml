@@ -1,0 +1,39 @@
+﻿@model List<Tag>;
+
+
+<div class="card">
+    <div class="card-header text-center bg-warning text-white">
+        <h5 class="card-title mb-0">Etiketler</h5>
+    </div>
+    <div class="card-body">
+        <div class="d-flex flex-column align-items-start">
+            @foreach (var tag in Model)
+            {
+                @if (tag.Text == "Web Programlama")
+                {
+                    <a href="/posts/tag/@tag.Url" class="btn btn-outline-warning btn-sm mb-2 rounded-pill">@tag.Text</a>
+                }
+                else if (tag.Text == "Backend")
+                {
+                    <a href="/posts/tag/@tag.Url" class="btn btn-outline-danger btn-sm mb-2 rounded-pill">@tag.Text</a>
+                }
+                else if (tag.Text == "Frontend")
+                {
+                    <a href="/posts/tag/@tag.Url" class="btn btn-outline-success btn-sm mb-2 rounded-pill">@tag.Text</a>
+                }
+                else if (tag.Text == "Full Stack")
+                {
+                    <a href="/posts/tag/@tag.Url" class="btn btn-outline-secondary btn-sm mb-2 rounded-pill">@tag.Text</a>
+                }
+                else if (tag.Text == "PHP")
+                {
+                    <a href="/posts/tag/@tag.Url" class="btn btn-outline-info btn-sm mb-2 rounded-pill">@tag.Text</a>
+                }
+                else
+                {
+                    <a href="/posts/tag/@tag.Url" class="btn btn-outline-dark btn-sm mb-2 rounded-pill">@tag.Text</a>
+                }
+            }
+        </div>
+    </div>
+</div>
